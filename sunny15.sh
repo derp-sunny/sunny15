@@ -2,8 +2,8 @@
 
 # Initialize the ROM manifest for RisingTech on branch 'fifteen' with Git LFS enabled
 # repo init -u https://github.com/RisingTechOSS/android -b fifteen --git-lfs
-repo init -u https://github.com/RisingOS-staging/android -b fifteen --git-lfs
-
+# repo init -u https://github.com/RisingOS-staging/android -b fifteen --git-lfs
+repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 15
 # Sync the repository with various options for efficient and clean syncing:
 # -c: Current branch only
 # --no-clone-bundle: Skip clone bundle usage
@@ -30,7 +30,7 @@ rm -rf prebuilts/gcc/linux-x86/aarch64/aarch64-elf
 rm -rf prebuilts/gcc/linux-x86/arm/arm-eabi
 
 # Clone the necessary device repositories
-git clone https://github.com/sunny-yaap/device_xiaomi_sunny.git --depth 1 -b fifteen device/xiaomi/sunny
+git clone https://github.com/derp-sunny/device_xiaomi_sunny.git --depth 1 -b fifteen device/xiaomi/sunny
 git clone https://github.com/yaap/device_qcom_common.git --depth 1 -b fifteen device/qcom/common
 git clone https://github.com/AOSPA/android_device_qcom_qssi.git --depth 1 -b vauxite device/qcom/qssi
 
@@ -55,13 +55,15 @@ git clone https://github.com/StatiXOS/android_prebuilts_gcc_linux-x86_aarch64_aa
 git clone https://github.com/StatiXOS/android_prebuilts_gcc_linux-x86_arm_arm-eabi.git --depth 1 -b 12.0.0 prebuilts/gcc/linux-x86/arm/arm-eabi
 
 # Rising private keys
-git clone https://github.com/sunny-keys/lineage-priv-risingos.git --depth 1 -b main vendor/lineage-priv/keys
+# git clone https://github.com/sunny-keys/lineage-priv-risingos.git --depth 1 -b main vendor/lineage-priv/keys
 
 # Set up the environment for building (loads variables and functions for the build process)
 . build/envsetup.sh
 
 # Specify the build target device and user variant
-riseup sunny user
+# riseup sunny user
+lunch derp_sunny-user
 
 # Start the build process
-rise b
+# rise b
+mka derp
