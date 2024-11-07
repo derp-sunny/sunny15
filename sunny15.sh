@@ -30,7 +30,7 @@ rm -rf prebuilts/gcc/linux-x86/aarch64/aarch64-elf
 rm -rf prebuilts/gcc/linux-x86/arm/arm-eabi
 
 # Clone the necessary device repositories
-git clone https://github.com/derp-sunny/device_xiaomi_sunny.git --depth 1 -b fifteen device/xiaomi/sunny
+git clone https://github.com/derp-sunny/android_device_xiaomi_sunny.git --depth 1 -b fifteen device/xiaomi/sunny
 git clone https://github.com/yaap/device_qcom_common.git --depth 1 -b fifteen device/qcom/common
 git clone https://github.com/AOSPA/android_device_qcom_qssi.git --depth 1 -b vauxite device/qcom/qssi
 
